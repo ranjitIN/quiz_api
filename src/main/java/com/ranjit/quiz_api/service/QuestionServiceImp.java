@@ -24,5 +24,30 @@ public class QuestionServiceImp implements QuestionService {
         // TODO Auto-generated method stub
         return questionrepo.save(question);
     }
+
+    @Override
+    public void deleteQuestion(int qid) {
+        // TODO Auto-generated method stub
+        questionrepo.deleteById(qid);
+    }
+
+    @Override
+    public Question updateQuestion(Question udateQuestion) {
+        // TODO Auto-generated method stub
+        return questionrepo.save(udateQuestion);
+    }
+
+    @Override
+    public Question findQuestionById(int qid) {
+        // TODO Auto-generated method stub
+        return questionrepo.findById(qid).orElse(null);
+    }
+
+    @Override
+    public String deleteQuestionById(int qid) {
+        // TODO Auto-generated method stub
+        questionrepo.deleteById(qid); //deleting the question
+        return "Question Deleted Successfully";
+    }
     
 }

@@ -1,7 +1,6 @@
 package com.ranjit.quiz_api.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.ranjit.quiz_api.model.User;
 import com.ranjit.quiz_api.repository.UserRepository;
@@ -30,6 +29,18 @@ public class UserServiceImp implements UserService {
     public User getUserbyUserId(String userId) {
         // TODO Auto-generated method stub
         return userrepo.findById(userId).orElse(null);
+    }
+
+    @Override
+    public User updateUser(User updateUser) {
+        // TODO Auto-generated method stub
+        return userrepo.save(updateUser);
+    }
+
+    @Override
+    public void deleteaUser(String userId) {
+        // TODO Auto-generated method stub
+        userrepo.deleteById(userId);
     }
         
 }

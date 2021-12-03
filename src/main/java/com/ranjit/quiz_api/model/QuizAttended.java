@@ -2,12 +2,9 @@ package com.ranjit.quiz_api.model;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -21,9 +18,8 @@ public class QuizAttended {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int qaId;
     
-    @OneToOne(fetch = FetchType.LAZY, optional=false)
-    @JoinColumn(name = "quiz_fId", nullable = false)
-    private Quiz quiz;
+    @NotBlank
+    private String quizId;
 
     @NotBlank
     private String markSecured;
@@ -31,14 +27,14 @@ public class QuizAttended {
     public QuizAttended() {
     }
 
-    public QuizAttended(Quiz quiz, @NotBlank String markSecured) {
-        this.quiz = quiz;
+    public QuizAttended(@NotBlank String quizId, @NotBlank String markSecured) {
+        this.quizId = quizId;
         this.markSecured = markSecured;
     }
 
-    public QuizAttended(int qaId, Quiz quiz, @NotBlank String markSecured) {
+    public QuizAttended(int qaId, @NotBlank String quizId, @NotBlank String markSecured) {
         this.qaId = qaId;
-        this.quiz = quiz;
+        this.quizId = quizId;
         this.markSecured = markSecured;
     }
 
@@ -50,12 +46,16 @@ public class QuizAttended {
         this.qaId = qaId;
     }
 
-    public Quiz getQuiz() {
-        return quiz;
+    public String getQuiz() {
+        return quizId;
     }
 
-    public void setQuiz(Quiz quiz) {
-        this.quiz = quiz;
+    public String getQuizId() {
+        return quizId;
+    }
+
+    public void setQuizId(String quizId) {
+        this.quizId = quizId;
     }
 
     public String getMarkSecured() {

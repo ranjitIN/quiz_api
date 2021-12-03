@@ -1,0 +1,29 @@
+{
+    "quizName": "1st test quiz",
+    "question": [
+      {
+        "question": "Who is the PM of briten",
+        "option1": "Kamla Haris",
+        "option2": "boris Jonson",
+        "option3": "Jo Biden",
+        "option4": "Monmohan Singh",
+        "correctAns": "boris jonson"
+      },
+      {
+        "question": "Who is the vice precident of USA",
+        "option1": "Barak Obama",
+        "option2": "Kamla Haris",
+        "option3": "jo biden",
+        "option4": "Lala lajpat rai",
+        "correctAns": "Kamla Haris"
+      },
+      {
+        "question": "Largest Blakish lake water of odisha",
+        "option1": "chilika",
+        "option2": "ansupa",
+        "option3": "tampara",
+        "option4": "bhudabalanga",
+        "correctAns": "chilika"
+      }
+    ]
+  }

@@ -2,6 +2,8 @@ package com.ranjit.quiz_api.model;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -13,6 +15,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 public class Question {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int qId;
     @NotBlank
     private String question;
@@ -28,6 +31,18 @@ public class Question {
     private String correctAns;
     public Question() {
     }
+    
+    public Question(int qId, @NotBlank String question, @NotBlank String option1, @NotBlank String option2,
+            @NotBlank String option3, @NotBlank String option4, @NotBlank String correctAns) {
+        this.qId = qId;
+        this.question = question;
+        this.option1 = option1;
+        this.option2 = option2;
+        this.option3 = option3;
+        this.option4 = option4;
+        this.correctAns = correctAns;
+    }
+
     public Question(@NotBlank String question, @NotBlank String option1, @NotBlank String option2,
             @NotBlank String option3, @NotBlank String option4, @NotBlank String correctAns) {
         this.question = question;

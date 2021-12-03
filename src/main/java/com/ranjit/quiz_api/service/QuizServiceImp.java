@@ -24,5 +24,17 @@ public class QuizServiceImp implements QuizService{
         // TODO Auto-generated method stub
         return quizrepo.save(newquiz);
     }
+
+    @Override
+    public Quiz updateQuizById(Quiz updateQuiz) {
+        // TODO Auto-generated method stub
+        return quizrepo.save(updateQuiz);
+    }
+
+    @Override
+    public Quiz findQuizByQuizId(int quizId) {
+        // TODO Auto-generated method stub
+        return quizrepo.findById(quizId).orElse(null);
+    }
     
 }

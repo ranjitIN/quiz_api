@@ -22,5 +22,10 @@ public class QuizAttendServiceImp implements QuizAttendService {
         // TODO Auto-generated method stub
         return qarepo.save(quizattended);
     }
-    
+
+    @Override
+    public List<QuizAttended> findQuizAttedndedByUser(String userId) {
+        // TODO Auto-generated method stub
+        return qarepo.findQuizAttedndedByUser(userId);
+    }
 }

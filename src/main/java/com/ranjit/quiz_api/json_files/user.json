@@ -1,0 +1,24 @@
+{
+    "userId": "user2",
+    "userName": "ranjit sahu",
+    "userPassword": "mysecurepassword",
+    "quizattended": null
+  }
+  {
+    "markSecured": "3",
+    "quizId": "2"
+  }
+
+  {
+    "userId": "user2",
+    "userName": "ranjit sahu",
+    "userPassword": "mysecurepassword",
+    "quizattended": [
+      {
+        "markSecured": "3",
+        "quizId": "2"
+      }    
+    ]
+  }
+  
+  

@@ -8,4 +8,8 @@ public interface QuestionService {
 
     List<Question> findAllQuestion();
     Question createaQuestion(Question question);
+    void deleteQuestion(int qid);
+    Question findQuestionById(int qid);
+    Question updateQuestion(Question udateQuestion);
+    String deleteQuestionById(int qid);
 }

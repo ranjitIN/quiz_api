@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,9 +34,21 @@ public class UserController {
         return userService.registeraUser(newuser);
     }
 
-    @PostMapping("/user/{userId}")
+    @GetMapping("/user/{userId}")
     public User getuserbyUserId(@PathVariable(value="userId") String userId)
     {
         return userService.getUserbyUserId(userId);
     }
+
+    @PutMapping("user/{userId}")
+    public User updateUser(@PathVariable(value="userId")String userId,@Valid @RequestBody User updateUser)
+    {
+        User user = userService.getUserbyUserId(userId);
+        user.setUserId(updateUser.getUserId());
+        user.setUserName(updateUser.getUserName());
+        user.setQuizattended(updateUser.getQuizattended());
+        return userService.updateUser(user);
+    }
+
+
 }
