@@ -46,10 +46,6 @@ public class QuizAttended {
         this.qaId = qaId;
     }
 
-    public String getQuiz() {
-        return quizId;
-    }
-
     public String getQuizId() {
         return quizId;
     }
@@ -65,4 +61,6 @@ public class QuizAttended {
     public void setMarkSecured(String markSecured) {
         this.markSecured = markSecured;
     }
+
+   
 }

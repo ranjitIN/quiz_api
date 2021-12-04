@@ -8,6 +8,7 @@ import com.ranjit.quiz_api.model.User;
 import com.ranjit.quiz_api.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,5 +51,9 @@ public class UserController {
         return userService.updateUser(user);
     }
 
-
+    @DeleteMapping("user/{userId}")
+    public String deleteUser(@PathVariable(value="userId")String userId)
+    {
+        return userService.deleteaUserById(userId);
+    }
 }

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 @Repository
-public interface QaRepository extends JpaRepository<QuizAttended,String>{
+public interface QaRepository extends JpaRepository<QuizAttended,Integer>{
     @Query(value="SELECT * FROM quiz_attended WHERE user_f_id=?1", nativeQuery = true)
     List<QuizAttended> findQuizAttedndedByUser(String userId);
 }

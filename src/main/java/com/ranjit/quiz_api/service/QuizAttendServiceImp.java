@@ -28,4 +28,10 @@ public class QuizAttendServiceImp implements QuizAttendService {
         // TODO Auto-generated method stub
         return qarepo.findQuizAttedndedByUser(userId);
     }
+    @Override
+    public String deleteQuizAttendedById(int qaId)
+    {
+        qarepo.deleteById(qaId);
+        return "Attendence deleted Sucessfully";
+    }
 }

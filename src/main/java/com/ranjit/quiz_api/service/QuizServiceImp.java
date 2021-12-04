@@ -36,5 +36,13 @@ public class QuizServiceImp implements QuizService{
         // TODO Auto-generated method stub
         return quizrepo.findById(quizId).orElse(null);
     }
+
+    @Override
+    public String deleteQuizById(int quizId) {
+        // TODO Auto-generated method stub
+        quizrepo.deleteById(quizId);
+
+        return "Quiz Deleted Sucessfully";
+    }
     
 }

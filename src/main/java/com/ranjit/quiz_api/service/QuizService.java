@@ -9,4 +9,5 @@ public interface QuizService {
     Quiz createaQuiz(Quiz newquiz);
     Quiz updateQuizById(Quiz updateQuiz);
     Quiz findQuizByQuizId(int quizId);
+    String deleteQuizById(int quizId);
 }

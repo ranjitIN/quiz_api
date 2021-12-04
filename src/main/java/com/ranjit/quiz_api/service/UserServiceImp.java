@@ -38,9 +38,10 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public void deleteaUser(String userId) {
+    public String deleteaUserById(String userId) {
         // TODO Auto-generated method stub
         userrepo.deleteById(userId);
+        return "User Sucessfully Deleted";
     }
         
 }
